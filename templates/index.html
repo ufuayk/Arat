@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arat - Aratma Motoru</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#8cfffa',
+                            50: '#f0ffff',
+                            100: '#e0f7fe',
+                            200: '#b3e9f5',
+                            300: '#8cfffa',
+                            400: '#66e5f0',
+                            500: '#4ddbf6',
+                            600: '#33d1f2',
+                            700: '#1aa7ec',
+                            800: '#0099e6',
+                            900: '#0080d0'
+                        },
+                        slate: {
+                            850: '#172032'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Google Sans"', 'Roboto', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 10px rgba(0, 0, 0, 0.05)',
+                        'soft-lg': '0 4px 20px rgba(0, 0, 0, 0.08)'
+                    },
+                    animation: {
+                        'pulse-subtle': 'pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        'pulse-subtle': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.8 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="bg-gray-50 dark:bg-slate-850 font-sans text-gray-800 dark:text-gray-200">
+    
+    <main class="w-full max-w-3xl mx-auto">
+        <div class="search-container mb-4">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Ne aratmak istersiniz?"
+                aria-label="Arama"
+            >
+            <a href="/">
+                <img src="static/arat.png" alt="Logo" class="logo">
+            </a>
+            <div id="loader" class="loader hidden">
+                <svg class="animate-spin h-8 w-8 text-primary-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+            <button id="searchButton" class="search-btn" aria-label="Arama">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div id="webResultsContainer" class="hidden">
+            <div id="webResults" class="web-results"></div>
+        </div>
+        <footer class="fixed bottom-1 right-0 py-3 px-4 bg-white dark:bg-slate-850">
+            <a href="https://github.com/ufuayk/Arat" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Kullanım Şartları & Gizlilik Politikası</a>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
