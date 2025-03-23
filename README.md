@@ -4,6 +4,8 @@ Arat, basit ve şık bir arama motoru arayüzü sağlayan açık kaynaklı bir p
 
 Tailwind CSS ile desteklenmiştir.
 
+Projeyi can sıkıntısından yaptığım için muhtemelen hiçbir zaman yeni bir güncelleme almayacak, ehh.
+
 ## Kullanım
 1. Ana ekranda arama çubuğuna bir terim yazın.
 2. "Ara" butonuna tıklayın veya Enter tuşuna basın.
