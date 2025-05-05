@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             loader.classList.add('hidden');
-            alert('An error occurred while searching. Please try again.');
+            alert('Lütfen tekrar deneyiniz.');
         });
     }
 
